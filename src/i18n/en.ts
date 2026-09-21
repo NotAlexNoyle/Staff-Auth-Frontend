@@ -52,8 +52,6 @@ export const dict = {
     },
     allow: "Allow",
     deny: "Deny",
-    noAccess: "Your role does not have access to {{ client }}",
-    back: "Back",
     error: {
       noChallenge: "No consent challenge was provided",
       invalidChallenge: "An invalid consent challenge was provided",
