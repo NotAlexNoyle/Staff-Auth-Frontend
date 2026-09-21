@@ -10,11 +10,15 @@ import { BASE_URL, isApiError } from "./api";
 
 export const loginApi = {
   loginData: async (loginChallenge: string): Promise<LoginData> => {
-    const url = new URL("/login/data", BASE_URL);
-    url.searchParams.set("login_challenge", loginChallenge);
     let response: Response;
     try {
-      response = await fetch(url);
+      response = await fetch(`${BASE_URL}/login/data`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          loginChallenge,
+        }),
+      });
     } catch (err) {
       throw toAppError(err);
     }
