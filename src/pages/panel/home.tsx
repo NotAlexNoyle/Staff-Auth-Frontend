@@ -9,12 +9,14 @@ export default function HomePage() {
   type Application = { name: string; link: string; icon: string };
   const applications = createMemo(() =>
     [
-      user()?.roles.includes("ADMIN") && {
+      ["ADMIN", "MODERATOR", "HELPER"].some((role) =>
+        user()?.roles.includes(role),
+      ) && {
         name: t("panel.home.application.staffPanel"),
         link: import.meta.env.VITE_STAFF_PANEL_URL,
         icon: "/application/minecraft.webp",
       },
-      {
+      ["ADMIN", "DEVELOPER"].some((role) => user()?.roles.includes(role)) && {
         name: t("panel.home.application.gitea"),
         link: import.meta.env.VITE_GITEA_URL,
         icon: "/application/gitea.svg",
