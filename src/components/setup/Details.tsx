@@ -57,7 +57,9 @@ export default function DetailsComponent(props: {
             </label>
             <input
               id="email"
+              name="email"
               type="email"
+              autocomplete="email"
               class="input w-full"
               placeholder={t("setup.details.email")}
               value={email()}
@@ -69,7 +71,9 @@ export default function DetailsComponent(props: {
             </label>
             <input
               id="password"
+              name="new-password"
               type="password"
+              autocomplete="new-password"
               class="input w-full"
               placeholder={t("setup.details.password")}
               value={password()}

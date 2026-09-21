@@ -43,42 +43,66 @@ export default function ConsentPage() {
               <div class="flex flex-col items-center gap-4">
                 <h1 class="text-2xl font-bold">{t("consent.title")}</h1>
 
-                <h2 class="text-lg">
-                  {t("consent.clientWouldLikeTo", {
-                    client: consentData()?.clientName ?? "",
-                  })}
-                </h2>
-                <ul class="list-disc">
-                  <For each={consentData()?.scopes}>
-                    {(scope) => (
-                      <li>
-                        {t(scopeMap.get("") ?? "consent.scopes.default", {
-                          scope,
+                <Show
+                  when={consentData()?.allowed !== false}
+                  fallback={
+                    <>
+                      <h2 class="text-lg text-center">
+                        {t("consent.noAccess", {
+                          client: consentData()?.clientName ?? "",
                         })}
-                      </li>
-                    )}
-                  </For>
-                </ul>
-                <div class="w-full py-2 flex flex-col gap-2">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      consent(true, params.consent_challenge as string)
-                    }
-                    class="btn btn-success"
-                  >
-                    {t("consent.allow")}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      consent(false, params.consent_challenge as string)
-                    }
-                    class="btn btn-error"
-                  >
-                    {t("consent.deny")}
-                  </button>
-                </div>
+                      </h2>
+                      <div class="w-full py-2 flex flex-col gap-2">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            consent(false, params.consent_challenge as string)
+                          }
+                          class="btn btn-soft"
+                        >
+                          {t("consent.back")}
+                        </button>
+                      </div>
+                    </>
+                  }
+                >
+                  <h2 class="text-lg">
+                    {t("consent.clientWouldLikeTo", {
+                      client: consentData()?.clientName ?? "",
+                    })}
+                  </h2>
+                  <ul class="list-disc">
+                    <For each={consentData()?.scopes}>
+                      {(scope) => (
+                        <li>
+                          {t(scopeMap.get("") ?? "consent.scopes.default", {
+                            scope,
+                          })}
+                        </li>
+                      )}
+                    </For>
+                  </ul>
+                  <div class="w-full py-2 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        consent(true, params.consent_challenge as string)
+                      }
+                      class="btn btn-success"
+                    >
+                      {t("consent.allow")}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        consent(false, params.consent_challenge as string)
+                      }
+                      class="btn btn-error"
+                    >
+                      {t("consent.deny")}
+                    </button>
+                  </div>
+                </Show>
               </div>
             </div>
           </div>

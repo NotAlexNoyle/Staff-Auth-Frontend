@@ -5,7 +5,7 @@ import { BASE_URL, isApiError } from "./api";
 
 export const consentApi = {
   consentData: async (consentChallenge: string): Promise<ConsentData> => {
-    const url = new URL("/consent", BASE_URL);
+    const url = new URL(`${BASE_URL}/consent`);
     url.searchParams.set("consent_challenge", consentChallenge);
     let response: Response;
     try {

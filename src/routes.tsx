@@ -13,7 +13,8 @@ const Consent = lazy(() => import("./pages/consent"));
 
 const Setup = lazy(() => import("./pages/setup"));
 
-import ResetAccount from "./pages/resetAccount";
+// TODO: /reset-account is unfinished — pages/resetAccount.tsx is not in the repository yet.
+// import ResetAccount from "./pages/resetAccount";
 
 export const routes: RouteDefinition[] = [
   {
@@ -67,14 +68,14 @@ export const routes: RouteDefinition[] = [
       </BasicLayout>
     ),
   },
-  {
-    path: "/reset-account",
-    component: () => (
-      <BasicLayout>
-        <ResetAccount />
-      </BasicLayout>
-    ),
-  },
+  // {
+  //   path: "/reset-account",
+  //   component: () => (
+  //     <BasicLayout>
+  //       <ResetAccount />
+  //     </BasicLayout>
+  //   ),
+  // },
   {
     path: "/successful-setup",
     component: lazy(() => import("./pages/successfulSetup")),
