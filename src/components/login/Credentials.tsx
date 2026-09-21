@@ -60,7 +60,11 @@ export default function CredentialsComponent(props: {
             </label>
             <input
               id="username"
+              name="username"
               type="text"
+              autocomplete="username"
+              autocapitalize="off"
+              spellcheck={false}
               class="input w-full"
               placeholder={t("login.credentials.username")}
               value={username()}
@@ -72,7 +76,9 @@ export default function CredentialsComponent(props: {
             </label>
             <input
               id="password"
+              name="password"
               type="password"
+              autocomplete="current-password"
               class="input w-full"
               placeholder={t("login.credentials.password")}
               value={password()}

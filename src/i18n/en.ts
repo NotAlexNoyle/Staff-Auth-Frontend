@@ -1,12 +1,13 @@
 export const dict = {
   login: {
+    login: "Log in",
     continue: "Continue",
     loading: "Loading login…",
     failure: "Failed to log in",
     tryAgain: "Try again",
     credentials: {
       title: "Login",
-      username: "Username",
+      username: "Minecraft username",
       password: "Password",
       error: {
         incorrectUsernameOrPassword: "Incorrect username or password",

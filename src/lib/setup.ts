@@ -5,7 +5,7 @@ import { BASE_URL, isApiError } from "./api";
 
 export const setupApi = {
   currentStage: async (token: string): Promise<SetupStage> => {
-    const url = new URL("/setup/current-stage", BASE_URL);
+    const url = new URL(`${BASE_URL}/setup/current-stage`);
     url.searchParams.set("token", token);
     let response: Response;
     try {
