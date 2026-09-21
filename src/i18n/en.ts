@@ -62,8 +62,7 @@ export const dict = {
     home: {
       applications: "Applications",
       application: {
-        adminPanel: "Admin Panel",
-        punishmentPanel: "Punishment Panel",
+        staffPanel: "Staff Panel",
         gitea: "Gitea",
         wekan: "Wekan",
         filebrowser: "Filebrowser",
