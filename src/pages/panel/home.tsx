@@ -45,7 +45,7 @@ export default function HomePage() {
   return (
     <section class="flex flex-col items-center justify-center min-h-[50vh] gap-8 p-8">
       <img class="w-lg" src="/logo.webp" alt="TrueOG logo"></img>
-      <h1 class="text-4xl font-bold">{t("panel.home.applications")}</h1>
+      <h1 class="text-4xl font-bold">{t("panel.home.intranet")}</h1>
 
       <div class="grid gap-6 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         <For each={applications()}>

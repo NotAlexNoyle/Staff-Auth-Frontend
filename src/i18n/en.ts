@@ -60,7 +60,7 @@ export const dict = {
   panel: {
     loading: "Loading panel…",
     home: {
-      applications: "Applications",
+      intranet: "Intranet",
       application: {
         staffPanel: "Staff Panel",
         gitea: "Gitea",
