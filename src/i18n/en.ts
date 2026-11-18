@@ -173,7 +173,15 @@ export const dict = {
   },
   logout: {
     loggedOut: "Logged out",
+    explanation:
+      "You are signed out of Staff-Auth and of the TrueOG apps that use it (Gitea and WeKan).",
     logBackIn: "Log back in",
+    loading: "Signing you out…",
+    error: {
+      noChallenge: "No logout challenge was provided",
+      invalidChallenge: "An invalid logout challenge was provided",
+      challengeUsed: "This logout challenge has already been used",
+    },
   },
   error: {
     unknownError: "Unknown error",

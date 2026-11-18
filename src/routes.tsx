@@ -10,6 +10,7 @@ import { preloadUsers } from "./pages/panel/user/users.data";
 
 const Login = lazy(() => import("./pages/login"));
 const Consent = lazy(() => import("./pages/consent"));
+const Logout = lazy(() => import("./pages/logout"));
 
 const Setup = lazy(() => import("./pages/setup"));
 
@@ -57,6 +58,14 @@ export const routes: RouteDefinition[] = [
     component: () => (
       <BasicLayout>
         <Consent />
+      </BasicLayout>
+    ),
+  },
+  {
+    path: "/logout",
+    component: () => (
+      <BasicLayout>
+        <Logout />
       </BasicLayout>
     ),
   },
